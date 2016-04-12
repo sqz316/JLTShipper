@@ -25,7 +25,7 @@
     RootTabBarVC * rootTab = [[RootTabBarVC alloc]init];
     self.window.rootViewController = rootTab;
     
-    
+    NSLog(@"34555");
     return YES;
 }
 
