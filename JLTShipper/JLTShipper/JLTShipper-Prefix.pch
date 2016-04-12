@@ -1,0 +1,98 @@
+//
+//  JLTShipper-Prefix.pch
+//  JLTShipper
+//
+//  Created by sinoservices on 16/4/12.
+//  Copyright © 2016年 Noah. All rights reserved.
+//
+
+#ifndef JLTShipper_Prefix_pch
+#define JLTShipper_Prefix_pch
+
+
+
+#import "AppDelegate.h"
+#import "UseModel.h"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//系统导航
+#define appDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+//系统字体
+#define QuickFont(S) [UIFont fontWithName:@"Helvetica" size:S]
+//快速照片
+#define QuickImage(image)  [UIImage imageNamed:image]
+//快速本地图片
+#define QuickContentsImage(image,type)  [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:image ofType:type]]
+//快速原图片
+#define QuickOriginalImage(image) [[UIImage imageNamed:image]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+//加载中的图片
+#define QuickLoadingImage  [[UIImage imageNamed:@"loading.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch]
+
+//快速连接
+#define QuickURL(U) [NSURL URLWithString:U]
+//快速字符串
+#define QuickNSString(str1,str2)      [NSString stringWithFormat:str1,str2]
+
+
+
+//============================颜色================================
+//总色调
+#define BaseColor RGB(255,207,0,1)
+//系统背景颜色
+#define kSystemBgColor [UIColor colorWithRed:240.0/255.0 green:240.0/255.0 blue:240.0/255.0 alpha:1]
+//列表高低度
+#define HeaderFooterheight 10.0f
+//列表Accessory背景颜色
+#define kSystemAccessoryViewColor RGB(64,224,208,0.1)
+//列表Select系统颜色
+#define kSystemSelectBackgroundColor RGB(214,214,214,0.8)
+
+//颜色
+#define RGB(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a/1.0f]
+//颜色
+#define RGB_X(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+//RGB_X(0x067AB5)
+
+//***************************版本配置***************************
+//判断版本
+#define IOSVersion         ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue])
+#define IsIOS9               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==9)
+#define IsIOS8               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==8)
+#define IsIOS7               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==7)
+#define IsIOS6               ([[[[UIDevice currentDevice] systemVersion] substringToIndex:1] intValue]==6)
+//判断机器
+#define IsIPhone4_4S    (ScreenWidth==320.000000&&ScreenHeight==480.000000)
+#define IsIPhone5s      (ScreenWidth==320.000000&&ScreenHeight==568.000000)
+#define IsIPhone6       (ScreenWidth==375.000000&&ScreenHeight==667.000000)
+#define IsIPhone6Plus   (ScreenWidth==414.000000&&ScreenHeight==736.000000)
+
+//屏幕长度
+#define ScreenHeight    [[UIScreen mainScreen] bounds].size.height
+//屏幕宽度
+#define ScreenWidth     [[UIScreen mainScreen] bounds].size.width
+//最大输入长度
+#define MaxLength      [NSString stringWithFormat:@"%lld",LONG_LONG_MAX];
+
+//************************输出日志************************
+#ifdef DEBUG
+#define CLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#else
+#define CLog(format, ...)
+#endif
+
+//************************key************************
+#define UmengAppkey @"5678f8a0e0f55a4850001cdd"
+#define MD5_Key @"jiujinapp"
+#define PageSize @"15"
+#define kNotLeftMeunKey @"kNotLeftMeunKey"
+#define appKeyID @"1232321321"
+#define AppID       @"org.hemeiyun.sesame.ios"
+#define AppKey      @"t9h9t13LQ2zlyr7"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+
+#endif /* JLTShipper_Prefix_pch */
